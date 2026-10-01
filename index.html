@@ -32,6 +32,50 @@
   #dt-s1:checked ~ .carousel-dots label:nth-child(1),
   #dt-s2:checked ~ .carousel-dots label:nth-child(2),
   #dt-s3:checked ~ .carousel-dots label:nth-child(3){background:#1665C2;}
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .site-nav{padding-left:28px !important;padding-right:28px !important;}
+    .nav-links{gap:22px !important;}
+    .hero{padding:80px 28px 60px !important;}
+    .hero-title{font-size:40px !important;}
+    .screenshots-section{padding:0 28px 60px !important;}
+    .why-section{padding:20px 28px 70px !important;}
+    .why-grid{grid-template-columns:1fr !important;gap:28px !important;}
+    section#products{padding:20px 28px 90px !important;}
+    .flagship-card{flex-direction:column !important;align-items:flex-start !important;gap:24px !important;}
+    .flagship-icon{width:100% !important;height:120px !important;}
+    .products-grid{grid-template-columns:1fr 1fr !important;}
+    section#about{padding:70px 28px !important;}
+    .cta-band{padding:56px 28px !important;}
+    .cta-band h2{font-size:26px !important;}
+    footer#contact{padding:50px 28px 30px !important;}
+  }
+
+  @media (max-width: 640px) {
+    .site-nav{flex-wrap:wrap !important;row-gap:12px !important;justify-content:center !important;}
+    .nav-links{flex-wrap:wrap !important;justify-content:center !important;gap:10px 18px !important;}
+    .nav-links a{font-size:13.5px !important;}
+    .nav-links a[href^="tel"]{padding:8px 14px !important;}
+    .hero{padding:56px 20px 46px !important;}
+    .hero-title{font-size:30px !important;}
+    .hero-sub{font-size:15px !important;}
+    .hero-actions{flex-direction:column !important;width:100%;}
+    .hero-actions a{width:100%;text-align:center;box-sizing:border-box;}
+    .screenshots-section{padding:0 20px 50px !important;}
+    .why-section{padding:10px 20px 56px !important;}
+    section#products{padding:10px 20px 70px !important;}
+    .flagship-card{padding:26px !important;}
+    .products-grid{grid-template-columns:1fr !important;}
+    section#about{padding:56px 20px !important;}
+    section#about h2{font-size:26px !important;}
+    .cta-band{padding:44px 20px !important;}
+    .cta-band div[style*="display: flex; gap: 16px"]{flex-direction:column !important;width:100%;}
+    .cta-band a{width:100%;box-sizing:border-box;text-align:center;}
+    footer#contact{padding:40px 20px 26px !important;}
+    .footer-grid{flex-direction:column !important;gap:28px !important;}
+    .footer-grid > div{max-width:none !important;}
+  }
 </style>
 </head>
 <body>
@@ -39,34 +83,34 @@
 <div style="width: 100%; min-height: 100vh; display: flex; flex-direction: column; background: #F7F8FA;">
 
   <!-- NAV -->
-  <nav style="width: 100%; box-sizing: border-box; padding: 16px 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E7EC; position: sticky; top: 0; background: rgba(247,248,250,0.94); backdrop-filter: blur(6px); z-index: 10;">
+  <nav class="site-nav" style="width: 100%; box-sizing: border-box; padding: 16px 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E7EC; position: sticky; top: 0; background: rgba(247,248,250,0.94); backdrop-filter: blur(6px); z-index: 10;">
     <a href="#top" style="display: flex; align-items: center;">
-      <img src="logo.png" alt="SetuTec" style="height: 40px; width: auto; display: block; border-radius: 6px;">
+      <img src="logo.png" alt="SetuTec" class="nav-logo" style="height: 40px; width: auto; display: block; border-radius: 6px;">
     </a>
-    <div style="display: flex; align-items: center; gap: 40px;">
+    <div class="nav-links" style="display: flex; align-items: center; gap: 40px;">
       <a href="#products" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">Products</a>
       <a href="#about" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">About</a>
       <a href="#contact" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">Contact</a>
       <a href="tel:+918237768885" style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 10px 18px; border: 1px solid #D7DBE2; border-radius: 999px; color: #12161C;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        +91 82377 68885
+        <span class="phone-text">+91 82377 68885</span>
       </a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header id="top" style="width: 100%; box-sizing: border-box; padding: 110px 64px 90px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px;">
+  <header id="top" class="hero" style="width: 100%; box-sizing: border-box; padding: 110px 64px 90px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px;">
     <div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #E27A12;">Civil Engineering &nbsp;|&nbsp; Software Solutions</div>
-    <h1 style="font-size: 56px; line-height: 1.08; font-weight: 700; color: #12161C; max-width: 780px;">Practical software, built by people who actually run job sites.</h1>
-    <p style="font-size: 18px; line-height: 1.6; color: #5C6675; max-width: 600px; margin: 0; font-family: 'Work Sans', sans-serif;">SetuTec builds the tools construction and security-services teams reach for instead of another spreadsheet — starting with guard duty auditing.</p>
-    <div style="display: flex; gap: 16px; margin-top: 8px;">
+    <h1 class="hero-title" style="font-size: 56px; line-height: 1.08; font-weight: 700; color: #12161C; max-width: 780px;">Practical software, built by people who actually run job sites.</h1>
+    <p class="hero-sub" style="font-size: 18px; line-height: 1.6; color: #5C6675; max-width: 600px; margin: 0; font-family: 'Work Sans', sans-serif;">SetuTec builds the tools construction and security-services teams reach for instead of another spreadsheet — starting with guard duty auditing.</p>
+    <div class="hero-actions" style="display: flex; gap: 16px; margin-top: 8px;">
       <a href="#screenshots" class="btn-primary" style="padding: 15px 30px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Work Sans', sans-serif;">See DutyTrace in action</a>
       <a href="#contact" class="btn-ghost" style="padding: 15px 30px; border: 1px solid #12161C; border-radius: 8px; font-weight: 600; font-size: 16px; color: #12161C; font-family: 'Work Sans', sans-serif; transition: all 0.15s;">Talk to us</a>
     </div>
   </header>
 
   <!-- SCREENSHOTS -->
-  <section id="screenshots" style="width: 100%; box-sizing: border-box; padding: 0 64px 90px; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center;">
+  <section id="screenshots" class="screenshots-section" style="width: 100%; box-sizing: border-box; padding: 0 64px 90px; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center;">
     <div style="text-align: center; display: flex; flex-direction: column; gap: 8px; max-width: 560px;">
       <h2 style="font-size: 28px; font-weight: 700; color: #12161C;">A look inside DutyTrace</h2>
       <p style="font-size: 15.5px; line-height: 1.6; color: #5C6675; margin: 0; font-family: 'Work Sans', sans-serif;">Screens from the live dashboard — data shown here is illustrative.</p>
@@ -89,8 +133,8 @@
   </section>
 
   <!-- WHY -->
-  <section style="width: 100%; box-sizing: border-box; padding: 20px 64px 90px; max-width: 1280px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+  <section class="why-section" style="width: 100%; box-sizing: border-box; padding: 20px 64px 90px; max-width: 1280px; margin: 0 auto;">
+    <div class="why-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <div style="width: 34px; height: 3px; background: linear-gradient(90deg, #2E9BFF, #1665C2); border-radius: 2px;"></div>
         <h3 style="font-size: 19px; font-weight: 700; color: #12161C;">Built by practitioners</h3>
@@ -117,7 +161,7 @@
     </div>
 
     <!-- Flagship -->
-    <div class="card" style="display: flex; gap: 40px; align-items: center; padding: 44px; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; transition: box-shadow 0.15s, border-color 0.15s;">
+    <div class="card flagship-card" style="display: flex; gap: 40px; align-items: center; padding: 44px; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; transition: box-shadow 0.15s, border-color 0.15s;">
       <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
         <div style="display: flex; align-items: center; gap: 12px;">
           <h3 style="font-size: 26px; font-weight: 700; color: #12161C;">DutyTrace</h3>
@@ -126,12 +170,12 @@
         <p style="font-size: 16px; line-height: 1.6; color: #5C6675; margin: 0; max-width: 520px; font-family: 'Work Sans', sans-serif;">GPS- and photo-verified guard duty attendance, reconciled automatically against agency bills.</p>
         <a href="#screenshots" class="link-underline" style="font-size: 15px; font-weight: 600; color: #1665C2; width: fit-content; font-family: 'Work Sans', sans-serif;">See screenshots &#8594;</a>
       </div>
-      <div style="width: 200px; height: 150px; flex-shrink: 0; background: #12161C; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+      <div class="flagship-icon" style="width: 200px; height: 150px; flex-shrink: 0; background: #12161C; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
         <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#F7941D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+    <div class="products-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
       <div class="card" style="display: flex; flex-direction: column; gap: 14px; padding: 30px; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 14px; transition: box-shadow 0.15s, border-color 0.15s;">
         <div style="width: 40px; height: 40px; border-radius: 9px; background: #EAF2FC; display: flex; align-items: center; justify-content: center;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1665C2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
@@ -172,7 +216,7 @@
   </section>
 
   <!-- CTA BAND -->
-  <section style="width: 100%; box-sizing: border-box; padding: 70px 64px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; background: linear-gradient(135deg, #1665C2 0%, #12161C 100%);">
+  <section class="cta-band" style="width: 100%; box-sizing: border-box; padding: 70px 64px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; background: linear-gradient(135deg, #1665C2 0%, #12161C 100%);">
     <h2 style="font-size: 30px; font-weight: 700; color: #FFFFFF; max-width: 560px;">Ready to see DutyTrace on your sites?</h2>
     <p style="font-size: 16px; line-height: 1.6; color: #C9D3E0; max-width: 480px; margin: 0; font-family: 'Work Sans', sans-serif;">Talk to us about your guard count and billing cycle — we'll show you what it looks like reconciled automatically.</p>
     <div style="display: flex; gap: 16px;">
@@ -183,7 +227,7 @@
 
   <!-- FOOTER -->
   <footer id="contact" style="width: 100%; box-sizing: border-box; padding: 60px 64px 36px; display: flex; flex-direction: column; gap: 40px; background: #FFFFFF;">
-    <div style="display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+    <div class="footer-grid" style="display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
       <div style="display: flex; flex-direction: column; gap: 12px; max-width: 340px;">
         <img src="logo.png" alt="SetuTec" style="height: 32px; width: auto; border-radius: 5px; align-self: flex-start;">
         <p style="font-size: 14px; line-height: 1.6; color: #7A8390; margin: 0; font-family: 'Work Sans', sans-serif;">Software for construction, security services, and the teams that run them.</p>
