@@ -19,6 +19,19 @@
   .btn-primary:hover{filter:brightness(1.08);}
   .btn-ghost:hover{background:#12161C;color:#FFFFFF;}
   .card:hover{box-shadow:0 12px 28px rgba(18,22,28,0.08);border-color:#C7CDD6;}
+  .carousel-radio{display:none;}
+  .carousel{position:relative; width:100%;}
+  .carousel-track{position:relative; width:100%; aspect-ratio:1400/980; border-radius:14px; overflow:hidden; background:#12161A; border:1px solid #E4E7EC;}
+  .carousel-slide{position:absolute; inset:0; opacity:0; transition:opacity 0.45s ease; pointer-events:none;}
+  .carousel-slide img{width:100%; height:100%; object-fit:contain; display:block;}
+  .carousel-dots{display:flex; gap:8px; justify-content:center; margin-top:16px;}
+  .carousel-dots label{width:9px; height:9px; border-radius:50%; background:#D7DBE2; cursor:pointer; transition:background 0.2s;}
+  #dt-s1:checked ~ .carousel-track .carousel-slide:nth-child(1),
+  #dt-s2:checked ~ .carousel-track .carousel-slide:nth-child(2),
+  #dt-s3:checked ~ .carousel-track .carousel-slide:nth-child(3){opacity:1; pointer-events:auto;}
+  #dt-s1:checked ~ .carousel-dots label:nth-child(1),
+  #dt-s2:checked ~ .carousel-dots label:nth-child(2),
+  #dt-s3:checked ~ .carousel-dots label:nth-child(3){background:#1665C2;}
 </style>
 </head>
 <body>
@@ -47,10 +60,33 @@
     <h1 style="font-size: 56px; line-height: 1.08; font-weight: 700; color: #12161C; max-width: 780px;">Practical software, built by people who actually run job sites.</h1>
     <p style="font-size: 18px; line-height: 1.6; color: #5C6675; max-width: 600px; margin: 0; font-family: 'Work Sans', sans-serif;">SetuTec builds the tools construction and security-services teams reach for instead of another spreadsheet — starting with guard duty auditing.</p>
     <div style="display: flex; gap: 16px; margin-top: 8px;">
-      <a href="https://dutytrace.pages.dev" class="btn-primary" style="padding: 15px 30px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Work Sans', sans-serif;">See DutyTrace in action</a>
+      <a href="#screenshots" class="btn-primary" style="padding: 15px 30px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Work Sans', sans-serif;">See DutyTrace in action</a>
       <a href="#contact" class="btn-ghost" style="padding: 15px 30px; border: 1px solid #12161C; border-radius: 8px; font-weight: 600; font-size: 16px; color: #12161C; font-family: 'Work Sans', sans-serif; transition: all 0.15s;">Talk to us</a>
     </div>
   </header>
+
+  <!-- SCREENSHOTS -->
+  <section id="screenshots" style="width: 100%; box-sizing: border-box; padding: 0 64px 90px; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center;">
+    <div style="text-align: center; display: flex; flex-direction: column; gap: 8px; max-width: 560px;">
+      <h2 style="font-size: 28px; font-weight: 700; color: #12161C;">A look inside DutyTrace</h2>
+      <p style="font-size: 15.5px; line-height: 1.6; color: #5C6675; margin: 0; font-family: 'Work Sans', sans-serif;">Screens from the live dashboard — data shown here is illustrative.</p>
+    </div>
+    <div class="carousel">
+      <input type="radio" name="dt-slide" id="dt-s1" class="carousel-radio" checked>
+      <input type="radio" name="dt-slide" id="dt-s2" class="carousel-radio">
+      <input type="radio" name="dt-slide" id="dt-s3" class="carousel-radio">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="dutytrace-dashboard.png" alt="DutyTrace dashboard screenshot"></div>
+        <div class="carousel-slide"><img src="dutytrace-onduty.png" alt="DutyTrace Who's On Duty screenshot"></div>
+        <div class="carousel-slide"><img src="dutytrace-register.png" alt="DutyTrace Attendance Register screenshot"></div>
+      </div>
+      <div class="carousel-dots">
+        <label for="dt-s1"></label>
+        <label for="dt-s2"></label>
+        <label for="dt-s3"></label>
+      </div>
+    </div>
+  </section>
 
   <!-- WHY -->
   <section style="width: 100%; box-sizing: border-box; padding: 20px 64px 90px; max-width: 1280px; margin: 0 auto;">
@@ -85,10 +121,10 @@
       <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
         <div style="display: flex; align-items: center; gap: 12px;">
           <h3 style="font-size: 26px; font-weight: 700; color: #12161C;">DutyTrace</h3>
-          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1E8E4A; background: #E5F5EA; padding: 5px 12px; border-radius: 999px; font-family: 'Work Sans', sans-serif;">Live</span>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1E8E4A; background: #E5F5EA; padding: 5px 12px; border-radius: 999px; font-family: 'Work Sans', sans-serif;">In use</span>
         </div>
         <p style="font-size: 16px; line-height: 1.6; color: #5C6675; margin: 0; max-width: 520px; font-family: 'Work Sans', sans-serif;">GPS- and photo-verified guard duty attendance, reconciled automatically against agency bills.</p>
-        <a href="https://dutytrace.pages.dev" class="link-underline" style="font-size: 15px; font-weight: 600; color: #1665C2; width: fit-content; font-family: 'Work Sans', sans-serif;">Open DutyTrace &#8594;</a>
+        <a href="#screenshots" class="link-underline" style="font-size: 15px; font-weight: 600; color: #1665C2; width: fit-content; font-family: 'Work Sans', sans-serif;">See screenshots &#8594;</a>
       </div>
       <div style="width: 200px; height: 150px; flex-shrink: 0; background: #12161C; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
         <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#F7941D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -141,7 +177,7 @@
     <p style="font-size: 16px; line-height: 1.6; color: #C9D3E0; max-width: 480px; margin: 0; font-family: 'Work Sans', sans-serif;">Talk to us about your guard count and billing cycle — we'll show you what it looks like reconciled automatically.</p>
     <div style="display: flex; gap: 16px;">
       <a href="tel:+918237768885" style="padding: 15px 30px; background: #F7941D; color: #12161C; border-radius: 8px; font-weight: 700; font-size: 16px; font-family: 'Work Sans', sans-serif;">Call +91 82377 68885</a>
-      <a href="mailto:hello@setutec.com" style="padding: 15px 30px; border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; font-weight: 600; font-size: 16px; color: #FFFFFF; font-family: 'Work Sans', sans-serif;">Email us</a>
+      <a href="mailto:info@setutec.com" style="padding: 15px 30px; border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; font-weight: 600; font-size: 16px; color: #FFFFFF; font-family: 'Work Sans', sans-serif;">Email us</a>
     </div>
   </section>
 
@@ -156,11 +192,11 @@
         <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #97A0AC; font-family: 'Work Sans', sans-serif;">Get in touch</div>
         <div style="font-size: 15px; font-weight: 600; color: #12161C; font-family: 'Work Sans', sans-serif;">K.Raju, Founder</div>
         <a href="tel:+918237768885" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">+91 82377 68885</a>
-        <a href="mailto:hello@setutec.com" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">hello@setutec.com</a>
+        <a href="mailto:info@setutec.com" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">info@setutec.com</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #97A0AC; font-family: 'Work Sans', sans-serif;">Products</div>
-        <a href="https://dutytrace.pages.dev" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">DutyTrace</a>
+        <a href="#screenshots" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">DutyTrace</a>
         <a href="#products" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">Roadmap</a>
       </div>
     </div>
