@@ -231,7 +231,7 @@
           <textarea id="leadMessage" rows="3" placeholder="Anything else we should know? (optional)"></textarea>
         </div>
         <button type="submit" class="btn-primary" style="padding: 14px 28px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border: none; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; width: fit-content;">Send &amp; start trial</button>
-        <p style="font-size: 12.5px; color: #8993A3; margin: 0;">This opens your email app with the details filled in — we read every message personally. Prefer to call? <a href="tel:+918237768885" class="link-underline" style="color:#FFFFFF;">+91 82377 68885</a></p>
+        <p style="font-size: 12.5px; color: #8993A3; margin: 0;">We read every request personally and email your login details after approval. Prefer to call? <a href="tel:+918237768885" class="link-underline" style="color:#FFFFFF;">+91 82377 68885</a></p>
       </form>
     </div>
   </section>
@@ -241,9 +241,7 @@
 </div>
 
 <script>
-  // No backend on this static site — "submitting" the lead form composes a pre-filled
-  // mailto: to info@setutec.com (same pattern as the other product pages' CTA buttons)
-  // so every inquiry still reaches a real inbox without needing a server.
+  // The lead form posts to the Secure sign-up service (with a mailto: fallback if the network fails).
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     const org = document.getElementById('leadOrg').value.trim();
@@ -254,20 +252,37 @@
     const guards = document.getElementById('leadGuards').value.trim();
     const message = document.getElementById('leadMessage').value.trim();
 
-    const subject = 'DutyTrace trial request — ' + org + ' (' + plan + ' plan)';
-    const bodyLines = [
-      'Organisation: ' + org,
-      'Contact person: ' + contact,
-      'Email: ' + email,
-      'Phone: ' + phone,
-      'Plan interested in: ' + plan,
-      'Approx. guards: ' + (guards || '—'),
-      '',
-      'Message:',
-      message || '—'
-    ];
-    const mailto = 'mailto:info@setutec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-    window.location.href = mailto;
+    const planText = document.getElementById('leadPlan').options[document.getElementById('leadPlan').selectedIndex].text;
+    const btn = e.target.querySelector('button[type="submit"]');
+    let note = document.getElementById('leadStatus');
+    if (!note) { note = document.createElement('p'); note.id = 'leadStatus'; note.style.cssText = 'font-size:14px;margin:0;color:#9FE3C8;'; btn.insertAdjacentElement('afterend', note); }
+    note.style.color = '#9FE3C8'; note.textContent = 'Sending...'; btn.disabled = true;
+
+    // Sends the request to the Secure sign-up service. Nothing is created until SetuTec approves it.
+    fetch('https://dutytrace-saas-admin-worker.rajukamble1212.workers.dev/public/enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        company: org, contactName: contact, email: email, phone: phone,
+        guards: guards, message: ('Plan: ' + planText + '. ' + message).slice(0, 500)
+      })
+    }).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, status: r.status, j: j }; });
+    }).then(function(res){
+      if (!res.ok) throw { server: true, message: res.j.error || 'Could not send your request.' };
+      note.textContent = 'Thank you! We will set up your organisation and email your login details within one business day.';
+      e.target.reset();
+      btn.disabled = false;
+    }).catch(function(err){
+      btn.disabled = false;
+      if (err && err.server) { note.style.color = '#FFB4A9'; note.textContent = err.message; return; }
+      // Network problem: fall back to the old email draft so the request is never lost.
+      note.textContent = 'Opening your email app instead...';
+      const subject = 'DutyTrace trial request \u2014 ' + org + ' (' + plan + ' plan)';
+      const bodyLines = ['Organisation: ' + org, 'Contact person: ' + contact, 'Email: ' + email, 'Phone: ' + phone,
+        'Plan interested in: ' + plan, 'Approx. guards: ' + (guards || '\u2014'), '', 'Message:', message || '\u2014'];
+      window.location.href = 'mailto:info@setutec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    });
   });
 
   // Pre-select the plan dropdown to match whichever "Start free trial" / "Talk to us"
