@@ -4,11 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SetuTec — Civil Engineering | Software Solutions</title>
-<meta name="description" content="SetuTec builds practical software for construction and security-services teams — starting with DutyTrace, GPS- and photo-verified guard duty auditing, reconciled automatically against agency bills.">
+<meta name="description" content="SetuTec builds practical software for construction and security-services teams — starting with Secure, GPS- and photo-verified guard duty auditing, reconciled automatically against agency bills.">
 <meta property="og:title" content="SetuTec — Civil Engineering | Software Solutions">
 <meta property="og:description" content="Practical software, built by people who actually run job sites.">
 <meta property="og:image" content="logo.png">
 <link rel="icon" href="logo.png">
+<meta property="og:site_name" content="SetuTec">
+<meta name="theme-color" content="#0d6a6b">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
 <style>
   body{margin:0;font-family:'Work Sans',sans-serif;background:#F7F8FA;color:#12161C;}
@@ -23,6 +25,14 @@
   .pcard:hover{box-shadow:0 14px 30px rgba(18,22,28,0.1);border-color:#C7CDD6;transform:translateY(-2px);}
   .pcard{transition:box-shadow 0.2s, border-color 0.2s, transform 0.2s;}
   .contact-card:hover{border-color:#1665C2; box-shadow:0 10px 24px rgba(22,101,194,0.12);}
+
+  /* Secure features */
+  .feat-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px;}
+  .feat-card{background:#FFFFFF; border:1px solid #E4E7EC; border-top:3px solid #34b58a; border-radius:14px; padding:26px; display:flex; flex-direction:column; gap:10px; transition:box-shadow 0.2s, transform 0.2s;}
+  .feat-card:hover{box-shadow:0 14px 30px rgba(18,22,28,0.1); transform:translateY(-2px);}
+  html{scroll-behavior:smooth;}
+  @media (max-width: 900px) { .features-section{padding:20px 28px 70px !important;} .feat-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width: 640px) { .features-section{padding:10px 20px 56px !important;} .feat-grid{grid-template-columns:1fr;} .signin-btn{padding:7px 12px !important;font-size:12.5px !important;} }
 
   /* Carousel */
   .carousel{position:relative; width:100%;}
@@ -144,7 +154,8 @@
       <a href="pricing.html" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">Pricing</a>
       <a href="#about" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">About</a>
       <a href="#contact" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">Contact</a>
-      <div class="nav-call-group" style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://secure.setutec.com" target="_blank" rel="noopener" class="signin-btn" style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;background:#0d6a6b;color:#FFFFFF;white-space:nowrap;"><img src="shield.png" alt="" style="height:18px;width:auto;"> Sign in to Secure</a>
+        <div class="nav-call-group" style="display: flex; align-items: center; gap: 10px;">
         <a href="tel:+918237768885" style="display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; padding: 9px 14px; border: 1px solid #D7DBE2; border-radius: 999px; color: #12161C; white-space: nowrap;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <span class="phone-text">+91 82377 68885</span>
@@ -165,7 +176,7 @@
         <h1 class="hero-title" style="font-size: 52px; line-height: 1.08; font-weight: 700; color: #12161C; max-width: 560px;">Practical software, built by people who actually run job sites.</h1>
         <p class="hero-sub" style="font-size: 17.5px; line-height: 1.6; color: #5C6675; max-width: 520px; margin: 0; font-family: 'Work Sans', sans-serif;">SetuTec builds the tools construction and security-services teams reach for instead of another spreadsheet — starting with guard duty auditing.</p>
         <div class="hero-actions" style="display: flex; gap: 16px; margin-top: 4px;">
-          <a href="#screenshots" class="btn-primary" style="padding: 15px 30px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Work Sans', sans-serif;">See DutyTrace in action</a>
+          <a href="#screenshots" class="btn-primary" style="padding: 15px 30px; background: linear-gradient(135deg, #2E9BFF 0%, #1665C2 100%); color: #FFFFFF; border-radius: 8px; font-weight: 600; font-size: 16px; font-family: 'Work Sans', sans-serif;">See Secure in action</a>
           <a href="#contact" class="btn-ghost" style="padding: 15px 30px; border: 1px solid #12161C; border-radius: 8px; font-weight: 600; font-size: 16px; color: #12161C; font-family: 'Work Sans', sans-serif; transition: all 0.15s;">Talk to us</a>
         </div>
       </div>
@@ -206,15 +217,15 @@
   <!-- SCREENSHOTS -->
   <section id="screenshots" class="screenshots-section" style="width: 100%; box-sizing: border-box; padding: 0 64px 90px; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center;">
     <div style="text-align: center; display: flex; flex-direction: column; gap: 8px; max-width: 560px;">
-      <h2 style="font-size: 28px; font-weight: 700; color: #12161C;">A look inside DutyTrace</h2>
+      <h2 style="font-size: 28px; font-weight: 700; color: #12161C;">A look inside Secure</h2>
       <p style="font-size: 15.5px; line-height: 1.6; color: #5C6675; margin: 0; font-family: 'Work Sans', sans-serif;">Screens from the live dashboard — data shown here is illustrative.</p>
     </div>
     <div class="carousel" id="dt-carousel">
       <div class="carousel-viewport" id="dt-viewport">
         <div class="carousel-track-inner" id="dt-track">
-          <div class="carousel-slide"><img src="dutytrace-dashboard.png" alt="DutyTrace dashboard screenshot"></div>
-          <div class="carousel-slide"><img src="dutytrace-onduty.png" alt="DutyTrace Who's On Duty screenshot"></div>
-          <div class="carousel-slide"><img src="dutytrace-register.png" alt="DutyTrace Attendance Register screenshot"></div>
+          <div class="carousel-slide"><img src="secure-dashboard.png" alt="Secure dashboard screenshot"></div>
+          <div class="carousel-slide"><img src="secure-onduty.png" alt="Secure Who's On Duty screenshot"></div>
+          <div class="carousel-slide"><img src="secure-register.png" alt="Secure Attendance Register screenshot"></div>
         </div>
       </div>
       <div class="carousel-dots" id="dt-dots">
@@ -224,6 +235,15 @@
       </div>
       <div class="carousel-hint" id="dt-hint">Auto-playing — click the image to pause</div>
     </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features-section" style="width: 100%; box-sizing: border-box; padding: 20px 64px 90px; max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+    <div style="text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center;">
+      <h2 style="font-size: 30px; font-weight: 700; color: #12161C;">What Secure does for your guard desk</h2>
+      <p style="font-size: 16.5px; line-height: 1.6; color: #5C6675; margin: 0; max-width: 620px; font-family: 'Work Sans', sans-serif;">Built from real registers and real bills, so the office stops chasing paper and starts seeing who is on duty.</p>
+    </div>
+    <div class="feat-grid"><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">GPS &amp; photo attendance</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Guards log in and out from their phone. Every entry carries a location and a live photo, so nobody can sign for someone else.</p></div><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">Double-duty detection</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Same-day, overnight, cross-site and continuous double shifts are flagged automatically, with the debit worked out for you.</p></div><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">Agency bill reconciliation</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Bills are checked against the real register. Debit notes and the net payable amount are ready without re-typing.</p></div><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">Alerts that matter</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Late or missed logins, guards leaving the site boundary, and stale locations reach the office as push alerts.</p></div><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">Site Incharge &amp; agency logins</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Give incharges and security agencies their own limited view. Only guards count toward billing.</p></div><div class="feat-card"><h3 style="font-size:17px;font-weight:700;color:#12161C;">Your company, kept private</h3><p style="font-size:14.5px;line-height:1.6;color:#5C6675;margin:0;font-family:'Work Sans',sans-serif;">Every company gets its own code, its own logo and fully separate data. Guards sign in with a mobile number and PIN.</p></div></div>
   </section>
 
   <!-- WHY -->
@@ -301,13 +321,14 @@
     <div class="card flagship-card" style="display: flex; gap: 40px; align-items: center; padding: 44px; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; transition: box-shadow 0.15s, border-color 0.15s;">
       <div style="flex: 1; display: flex; flex-direction: column; gap: 16px;">
         <div style="display: flex; align-items: center; gap: 12px;">
-          <h3 style="font-size: 26px; font-weight: 700; color: #12161C;">DutyTrace</h3>
+          <img src="shield.png" alt="" style="height: 40px; width: auto;"><h3 style="font-size: 26px; font-weight: 700; color: #12161C;">Secure</h3>
           <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1E8E4A; background: #E5F5EA; padding: 5px 12px; border-radius: 999px; font-family: 'Work Sans', sans-serif;">In use</span>
         </div>
         <p style="font-size: 16px; line-height: 1.6; color: #5C6675; margin: 0; max-width: 520px; font-family: 'Work Sans', sans-serif;">GPS- and photo-verified guard duty attendance, reconciled automatically against agency bills.</p>
         <div style="display: flex; gap: 22px; align-items: center; flex-wrap: wrap;">
           <a href="#screenshots" class="link-underline" style="font-size: 15px; font-weight: 600; color: #1665C2; width: fit-content; font-family: 'Work Sans', sans-serif;">See screenshots &#8594;</a>
           <a href="pricing.html" class="link-underline" style="font-size: 15px; font-weight: 600; color: #1665C2; width: fit-content; font-family: 'Work Sans', sans-serif;">View pricing &#8594;</a>
+          <a href="https://secure.setutec.com" target="_blank" rel="noopener" class="link-underline" style="font-size: 15px; font-weight: 600; color: #0d6a6b; width: fit-content; font-family: 'Work Sans', sans-serif;">Sign in to Secure &#8594;</a>
         </div>
       </div>
       <div class="flagship-photo">
@@ -363,7 +384,7 @@
 
   <!-- CTA BAND -->
   <section class="cta-band" style="width: 100%; box-sizing: border-box; padding: 70px 64px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; background: linear-gradient(135deg, #1665C2 0%, #12161C 100%);">
-    <h2 style="font-size: 30px; font-weight: 700; color: #FFFFFF; max-width: 560px;">Ready to see DutyTrace on your sites?</h2>
+    <h2 style="font-size: 30px; font-weight: 700; color: #FFFFFF; max-width: 560px;">Ready to see Secure on your sites?</h2>
     <p style="font-size: 16px; line-height: 1.6; color: #C9D3E0; max-width: 480px; margin: 0; font-family: 'Work Sans', sans-serif;">Talk to us about your guard count and billing cycle — we'll show you what it looks like reconciled automatically.</p>
     <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
       <a href="pricing.html" style="padding: 15px 30px; background: #F7941D; color: #12161C; border-radius: 8px; font-weight: 700; font-size: 16px; font-family: 'Work Sans', sans-serif;">See pricing</a>
@@ -426,7 +447,7 @@
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #97A0AC; font-family: 'Work Sans', sans-serif;">Products</div>
-        <a href="#screenshots" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">DutyTrace</a>
+        <a href="#screenshots" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">Secure</a>
         <a href="#products" class="link-underline" style="font-size: 14px; width: fit-content; color: #4A5361; font-family: 'Work Sans', sans-serif;">Roadmap</a>
       </div>
     </div>

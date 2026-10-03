@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SetuTec — DutyTrace Pricing</title>
-<meta name="description" content="DutyTrace pricing — simple, per-guard pricing for GPS- and photo-verified guard duty auditing, reconciled automatically against agency bills. 14-day free trial.">
+<title>SetuTec — Secure Pricing</title>
+<meta name="description" content="Secure pricing — simple, per-guard pricing for GPS- and photo-verified guard duty auditing, reconciled automatically against agency bills. 14-day free trial.">
+<meta name="theme-color" content="#0d6a6b">
 <link rel="icon" href="logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -62,7 +63,8 @@
     <a href="index.html" style="display: flex; align-items: center;">
       <img src="logo.png" alt="SetuTec" class="nav-logo" style="height: 40px; width: auto; display: block; border-radius: 6px;">
     </a>
-    <div class="nav-call-group" style="display: flex; align-items: center; gap: 10px;">
+    <a href="https://secure.setutec.com" target="_blank" rel="noopener" class="signin-btn" style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;background:#0d6a6b;color:#FFFFFF;white-space:nowrap;"><img src="shield.png" alt="" style="height:18px;width:auto;"> Sign in to Secure</a>
+        <div class="nav-call-group" style="display: flex; align-items: center; gap: 10px;">
       <a href="tel:+918237768885" style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 10px 18px; border: 1px solid #D7DBE2; border-radius: 999px; color: #12161C;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         +91 82377 68885
@@ -84,7 +86,7 @@
 
   <!-- HERO -->
   <header class="hero-sub-page" style="width: 100%; box-sizing: border-box; padding: 40px 64px 60px; max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center;">
-    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1E8E4A; background: #E5F5EA; padding: 5px 12px; border-radius: 999px;">DutyTrace — In use</span>
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1E8E4A; background: #E5F5EA; padding: 5px 12px; border-radius: 999px;">Secure — In use</span>
     <h1 style="font-size: 44px; font-weight: 700; line-height: 1.1; color: #12161C;">Simple, per-guard pricing</h1>
     <p style="font-size: 17.5px; line-height: 1.6; color: #5C6675; margin: 0; max-width: 620px;">Pay only for the guards you track. No setup fee, cancel anytime, 14-day free trial on every plan — no credit card required.</p>
   </header>
@@ -191,7 +193,7 @@
 
     <details class="faq-item" style="background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 12px; padding: 16px 20px;">
       <summary style="display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 600; color: #12161C;">Where is our data stored?<span class="faq-chevron" style="font-size: 20px; color: #5C6675; font-weight: 400;">+</span></summary>
-      <p style="font-size: 14px; line-height: 1.6; color: #5C6675; margin: 12px 0 0;">On Firebase, in an Asia-Pacific data region. Your organisation's data is isolated from every other organisation on DutyTrace — nothing is ever shared or mixed between customers.</p>
+      <p style="font-size: 14px; line-height: 1.6; color: #5C6675; margin: 12px 0 0;">On Firebase, in an Asia-Pacific data region. Your organisation's data is isolated from every other organisation on Secure — nothing is ever shared or mixed between customers.</p>
     </details>
   </section>
 
@@ -278,7 +280,7 @@
       if (err && err.server) { note.style.color = '#FFB4A9'; note.textContent = err.message; return; }
       // Network problem: fall back to the old email draft so the request is never lost.
       note.textContent = 'Opening your email app instead...';
-      const subject = 'DutyTrace trial request \u2014 ' + org + ' (' + plan + ' plan)';
+      const subject = 'Secure trial request \u2014 ' + org + ' (' + plan + ' plan)';
       const bodyLines = ['Organisation: ' + org, 'Contact person: ' + contact, 'Email: ' + email, 'Phone: ' + phone,
         'Plan interested in: ' + plan, 'Approx. guards: ' + (guards || '\u2014'), '', 'Message:', message || '\u2014'];
       window.location.href = 'mailto:info@setutec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(bodyLines.join('\n'));
