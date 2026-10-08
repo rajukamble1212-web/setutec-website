@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SetuTec — Construction ERP</title>
 <meta name="description" content="Construction ERP by SetuTec — project, billing, and site management in one system, in development.">
-<link rel="icon" href="logo.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
 <style>
   body{margin:0;font-family:'Work Sans',sans-serif;background:#F7F8FA;color:#12161C;}
@@ -19,7 +20,7 @@
   /* ===== Responsive ===== */
   @media (max-width: 760px) {
     .site-nav{padding-left:24px !important;padding-right:24px !important;}
-    .nav-logo{height:32px !important;}
+    
     .crumb{padding:18px 24px 0 !important;}
     .hero-sub-page{padding:28px 24px 50px !important;}
     .hero-sub-page h1{font-size:32px !important;}
@@ -34,6 +35,65 @@
     .nav-call-group{flex-wrap:wrap !important; justify-content:center !important;}
     .nav-call-group a{font-size:13px !important; padding:8px 12px !important;}
   }
+
+  /* ===== Dark screen theme (follows the visitor's device setting) ===== */
+  @media (prefers-color-scheme: dark) {
+    :root{color-scheme:dark;}
+    body{background:#0e1218;color:#F1F4F8;}
+    .feat-card,.capability-card,.contact-card{background:#161c24;border-color:#2a333e;}
+    .carousel-viewport{border-color:#2a333e;}
+    .carousel-dots .dot{background:#2c3641;} .carousel-dots .dot.active{background:#5aa7ff;}
+    .nav-link:hover{color:#5aa7ff;}
+    .btn-ghost:hover{background:#F1F4F8;color:#12161C;}
+    .lead-field input,.lead-field textarea,.lead-field select{background:#0e1218;color:#F1F4F8;border-color:#2c3641;}
+    .card:hover,.pcard:hover,.feat:hover{border-color:#3a4552;}
+    [style*="background: #F7F8FA" i]{background:#0e1218 !important;}
+  [style*="background:#F7F8FA" i]{background:#0e1218 !important;}
+  [style*="background: #FFFFFF" i]{background:#161c24 !important;}
+  [style*="background:#FFFFFF" i]{background:#161c24 !important;}
+  [style*="background: #EDEFF2" i]{background:#1d2530 !important;}
+  [style*="background:#EDEFF2" i]{background:#1d2530 !important;}
+  [style*="background: #EAF2FC" i]{background:#14263d !important;}
+  [style*="background:#EAF2FC" i]{background:#14263d !important;}
+  [style*="background: #FBEFD9" i]{background:#3a2c13 !important;}
+  [style*="background:#FBEFD9" i]{background:#3a2c13 !important;}
+  [style*="background: #E5F5EA" i]{background:#113022 !important;}
+  [style*="background:#E5F5EA" i]{background:#113022 !important;}
+  [style*="background: #FDE8E5" i]{background:#3a1815 !important;}
+  [style*="background:#FDE8E5" i]{background:#3a1815 !important;}
+  [style*="background: #D7DBE2" i]{background:#2c3641 !important;}
+  [style*="background:#D7DBE2" i]{background:#2c3641 !important;}
+  [style*="rgba(247,248,250" i]{background:rgba(14,18,24,0.94) !important;}
+  [style*="color: #12161C" i]{color:#F1F4F8 !important;}
+  [style*="color:#12161C" i]{color:#F1F4F8 !important;}
+  [style*="color: #5C6675" i]{color:#A6B0BD !important;}
+  [style*="color:#5C6675" i]{color:#A6B0BD !important;}
+  [style*="color: #4A5361" i]{color:#B9C1CC !important;}
+  [style*="color:#4A5361" i]{color:#B9C1CC !important;}
+  [style*="color: #3A424D" i]{color:#C9D0D9 !important;}
+  [style*="color:#3A424D" i]{color:#C9D0D9 !important;}
+  [style*="color: #97A0AC" i]{color:#8793A1 !important;}
+  [style*="color:#97A0AC" i]{color:#8793A1 !important;}
+  [style*="color: #7A8390" i]{color:#8F9AA8 !important;}
+  [style*="color:#7A8390" i]{color:#8F9AA8 !important;}
+  [style*="color: #1E8E4A" i]{color:#4cc77f !important;}
+  [style*="color:#1E8E4A" i]{color:#4cc77f !important;}
+  [style*="color: #1665C2" i]{color:#5aa7ff !important;}
+  [style*="color:#1665C2" i]{color:#5aa7ff !important;}
+  [style*="color: #B5730B" i]{color:#f0b455 !important;}
+  [style*="color:#B5730B" i]{color:#f0b455 !important;}
+  [style*="color: #0D6A6B" i]{color:#3fc1c3 !important;}
+  [style*="color:#0D6A6B" i]{color:#3fc1c3 !important;}
+  [style*="solid #E4E7EC" i]{border-color:#2a333e !important;}
+  [style*="solid #D7DBE2" i]{border-color:#2c3641 !important;}
+  [style*="solid #C7CDD6" i]{border-color:#3a4552 !important;}
+    img[src^="shield"]{filter:none;}
+  }
+  .nav-link{white-space:nowrap;}
+  .brand-logo{display:block;height:44px;width:auto;}
+  .brand-logo img{display:block;height:44px;width:auto;}
+  .brand-logo.foot,.brand-logo.foot img{height:52px;}
+  @media (max-width:640px){.brand-logo,.brand-logo img{height:36px;} .brand-logo.foot,.brand-logo.foot img{height:44px;}}
 </style>
 </head>
 <body>
@@ -43,7 +103,7 @@
   <!-- NAV -->
   <nav class="site-nav" style="width: 100%; box-sizing: border-box; padding: 16px 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E7EC; position: sticky; top: 0; background: rgba(247,248,250,0.94); backdrop-filter: blur(6px); z-index: 10;">
     <a href="index.html" style="display: flex; align-items: center;">
-      <img src="logo.png" alt="SetuTec" class="nav-logo" style="height: 40px; width: auto; display: block; border-radius: 6px;">
+      <picture class="brand-logo"><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img src="logo-light.png" alt="SetuTec"></picture>
     </a>
     <div class="nav-call-group" style="display: flex; align-items: center; gap: 10px;">
       <a href="tel:+918237768885" style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 10px 18px; border: 1px solid #D7DBE2; border-radius: 999px; color: #12161C;">

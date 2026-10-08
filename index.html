@@ -7,10 +7,12 @@
 <meta name="description" content="SetuTec builds practical software for construction and security-services teams — starting with Secure, GPS- and photo-verified guard duty auditing, reconciled automatically against agency bills.">
 <meta property="og:title" content="SetuTec — Civil Engineering | Software Solutions">
 <meta property="og:description" content="Practical software, built by people who actually run job sites.">
-<meta property="og:image" content="logo.png">
-<link rel="icon" href="logo.png">
+<meta property="og:image" content="https://setutec.com/og-image.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="color-scheme" content="light dark">
 <meta property="og:site_name" content="SetuTec">
-<meta name="theme-color" content="#0d6a6b">
+<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1218" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap">
 <style>
   body{margin:0;font-family:'Work Sans',sans-serif;background:#F7F8FA;color:#12161C;}
@@ -137,6 +139,65 @@
     .footer-grid{flex-direction:column !important;gap:28px !important;}
     .footer-grid > div{max-width:none !important;}
   }
+
+  /* ===== Dark screen theme (follows the visitor's device setting) ===== */
+  @media (prefers-color-scheme: dark) {
+    :root{color-scheme:dark;}
+    body{background:#0e1218;color:#F1F4F8;}
+    .feat-card,.capability-card,.contact-card{background:#161c24;border-color:#2a333e;}
+    .carousel-viewport{border-color:#2a333e;}
+    .carousel-dots .dot{background:#2c3641;} .carousel-dots .dot.active{background:#5aa7ff;}
+    .nav-link:hover{color:#5aa7ff;}
+    .btn-ghost:hover{background:#F1F4F8;color:#12161C;}
+    .lead-field input,.lead-field textarea,.lead-field select{background:#0e1218;color:#F1F4F8;border-color:#2c3641;}
+    .card:hover,.pcard:hover,.feat:hover{border-color:#3a4552;}
+    [style*="background: #F7F8FA" i]{background:#0e1218 !important;}
+  [style*="background:#F7F8FA" i]{background:#0e1218 !important;}
+  [style*="background: #FFFFFF" i]{background:#161c24 !important;}
+  [style*="background:#FFFFFF" i]{background:#161c24 !important;}
+  [style*="background: #EDEFF2" i]{background:#1d2530 !important;}
+  [style*="background:#EDEFF2" i]{background:#1d2530 !important;}
+  [style*="background: #EAF2FC" i]{background:#14263d !important;}
+  [style*="background:#EAF2FC" i]{background:#14263d !important;}
+  [style*="background: #FBEFD9" i]{background:#3a2c13 !important;}
+  [style*="background:#FBEFD9" i]{background:#3a2c13 !important;}
+  [style*="background: #E5F5EA" i]{background:#113022 !important;}
+  [style*="background:#E5F5EA" i]{background:#113022 !important;}
+  [style*="background: #FDE8E5" i]{background:#3a1815 !important;}
+  [style*="background:#FDE8E5" i]{background:#3a1815 !important;}
+  [style*="background: #D7DBE2" i]{background:#2c3641 !important;}
+  [style*="background:#D7DBE2" i]{background:#2c3641 !important;}
+  [style*="rgba(247,248,250" i]{background:rgba(14,18,24,0.94) !important;}
+  [style*="color: #12161C" i]{color:#F1F4F8 !important;}
+  [style*="color:#12161C" i]{color:#F1F4F8 !important;}
+  [style*="color: #5C6675" i]{color:#A6B0BD !important;}
+  [style*="color:#5C6675" i]{color:#A6B0BD !important;}
+  [style*="color: #4A5361" i]{color:#B9C1CC !important;}
+  [style*="color:#4A5361" i]{color:#B9C1CC !important;}
+  [style*="color: #3A424D" i]{color:#C9D0D9 !important;}
+  [style*="color:#3A424D" i]{color:#C9D0D9 !important;}
+  [style*="color: #97A0AC" i]{color:#8793A1 !important;}
+  [style*="color:#97A0AC" i]{color:#8793A1 !important;}
+  [style*="color: #7A8390" i]{color:#8F9AA8 !important;}
+  [style*="color:#7A8390" i]{color:#8F9AA8 !important;}
+  [style*="color: #1E8E4A" i]{color:#4cc77f !important;}
+  [style*="color:#1E8E4A" i]{color:#4cc77f !important;}
+  [style*="color: #1665C2" i]{color:#5aa7ff !important;}
+  [style*="color:#1665C2" i]{color:#5aa7ff !important;}
+  [style*="color: #B5730B" i]{color:#f0b455 !important;}
+  [style*="color:#B5730B" i]{color:#f0b455 !important;}
+  [style*="color: #0D6A6B" i]{color:#3fc1c3 !important;}
+  [style*="color:#0D6A6B" i]{color:#3fc1c3 !important;}
+  [style*="solid #E4E7EC" i]{border-color:#2a333e !important;}
+  [style*="solid #D7DBE2" i]{border-color:#2c3641 !important;}
+  [style*="solid #C7CDD6" i]{border-color:#3a4552 !important;}
+    img[src^="shield"]{filter:none;}
+  }
+  .nav-link{white-space:nowrap;}
+  .brand-logo{display:block;height:44px;width:auto;}
+  .brand-logo img{display:block;height:44px;width:auto;}
+  .brand-logo.foot,.brand-logo.foot img{height:52px;}
+  @media (max-width:640px){.brand-logo,.brand-logo img{height:36px;} .brand-logo.foot,.brand-logo.foot img{height:44px;}}
 </style>
 </head>
 <body>
@@ -146,7 +207,7 @@
   <!-- NAV -->
   <nav class="site-nav" style="width: 100%; box-sizing: border-box; padding: 16px 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E4E7EC; position: sticky; top: 0; background: rgba(247,248,250,0.94); backdrop-filter: blur(6px); z-index: 10;">
     <a href="#top" style="display: flex; align-items: center;">
-      <img src="logo.png" alt="SetuTec" class="nav-logo" style="height: 40px; width: auto; display: block; border-radius: 6px;">
+      <picture class="brand-logo"><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img src="logo-light.png" alt="SetuTec"></picture>
     </a>
     <div class="nav-links" style="display: flex; align-items: center; gap: 40px;">
       <a href="#capabilities" class="nav-link" style="font-size: 15px; font-weight: 500; color: #4A5361; transition: color 0.15s;">What we do</a>
@@ -432,7 +493,7 @@
   <footer style="width: 100%; box-sizing: border-box; padding: 60px 64px 36px; display: flex; flex-direction: column; gap: 40px; background: #FFFFFF;">
     <div class="footer-grid" style="display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
       <div style="display: flex; flex-direction: column; gap: 12px; max-width: 340px;">
-        <img src="logo.png" alt="SetuTec" style="height: 32px; width: auto; border-radius: 5px; align-self: flex-start;">
+        <picture class="brand-logo foot"><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img src="logo-light.png" alt="SetuTec"></picture>
         <p style="font-size: 14px; line-height: 1.6; color: #7A8390; margin: 0; font-family: 'Work Sans', sans-serif;">Software for construction, security services, and the teams that run them.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
